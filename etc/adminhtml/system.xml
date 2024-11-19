@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="railsformers" translate="label" sortOrder="1">
+            <label>Railsformers</label>
+        </tab>
+        <section id="railsformers_marketing_pack" showInDefault="1">
+            <tab>railsformers</tab>
+            <label>Marketing</label>
+            <resource>Railsformers_MarketingPack::config</resource>
+            <group id="google_analytics" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Google Analytics</label>
+                <field id="gtag_id" translate="label" type="text"  showInDefault="1">
+                    <label>Google Analytics ID</label>
+                </field>
+            </group>
+            <group id="google_ads" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Google Ads</label>
+                <field id="gads_id" translate="label" type="text"  showInDefault="1">
+                    <label>Google Ads Remarketing ID</label>
+                    
+                </field>
+                <field id="gads_conversion_label" translate="label" type="text"  showInDefault="1">
+                    <label>Google Ads Conversion Label</label>
+                </field>
+            </group>
+            <group id="seznam_zobzi" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Seznam a Zboží</label>
+                <field id="sklik_retargeting_id" translate="label" type="text"  showInDefault="1">
+                    <label>Sklik Retargeting ID</label>
+                </field>
+                <field id="sklik_conversion_id" translate="label" type="text"  showInDefault="1">
+                    <label>Sklik konverze nákup ID</label>
+                </field>
+                <field id="zbozi_place_id" translate="label" type="text"  showInDefault="1">
+                    <label>Zboží ID provozovny</label>
+                </field>
+                <field id="zbozi_secret_key" translate="label" type="text"  showInDefault="1">
+                    <label>Zboží tajný klíč</label>
+                </field>
+                <field id="zbozi_type" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Typ měření</label>
+                    <source_model>Railsformers\MarketingPack\Model\Config\Source\ZboziType</source_model>
+                </field>
+            </group>
+            <group id="meta" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Meta Pixel a Conversion API</label>
+                <field id="meta_id" translate="label" type="text"  showInDefault="1">
+                    <label>Meta Pixel ID</label>
+                </field>
+                <field id="meta_api" translate="label" type="text"  showInDefault="1">
+                    <label>Meta Conversion API token</label>
+                </field>
+            </group>
+            <group id="heureka" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Heureka</label>
+                <field id="heureka_id" translate="label" type="text"  showInDefault="1">
+                    <label>Heureka konverze ID</label>
+                </field>
+                <field id="heureka_overeno_key" translate="label" type="text"  showInDefault="1">
+                    <label>Heureka ověřeno zákazníky</label>
+                </field>
+            </group>
+            <group id="microsoft" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Microsoft Clarity</label>
+                <field id="clarity_id" translate="label" type="text"  showInDefault="1">
+                    <label>Microsoft Clarity ID</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

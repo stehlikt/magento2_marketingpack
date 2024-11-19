@@ -1,0 +1,19 @@
+<?php
+$productData = $block->getProductData();
+?>
+<?php if($block->getGoogleAnalyticsId()): ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "productViewGtag": {
+                        "component": "Railsformers_MarketingPack/js/googleanalytics/product_view",
+                        "productData": <?php echo json_encode($productData); ?>
+                        }
+                    }
+                }
+            }
+    }
+</script>
+<?php endif; ?>

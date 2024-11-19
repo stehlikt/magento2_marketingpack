@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\GoogleAnalytics\ProductView" name="product_view_gtag" template="Railsformers_MarketingPack::googleanalytics/product_view.phtml"/>
+        </referenceContainer>
+
+        <!-- Seznam -->
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\Seznam\ProductView" name="product_view_seznam" template="Railsformers_MarketingPack::seznam/product_view.phtml"/>
+        </referenceContainer>
+
+        <!-- Meta -->
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\Meta\ProductView" name="product_view_meta" template="Railsformers_MarketingPack::meta/product_view.phtml"/>
+        </referenceContainer>
+
+        <!-- Heureka -->
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\Heureka\ProductView" name="product_view_heureka" template="Railsformers_MarketingPack::heureka/product_view.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

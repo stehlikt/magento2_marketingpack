@@ -1,0 +1,19 @@
+<?php
+$searchData = $block->getSearchData();
+?>
+<?php if($block->getMetaId()): ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "searchViewMeta": {
+                        "component": "Railsformers_MarketingPack/js/meta/search_view",
+                        "searchData": <?php echo json_encode($searchData); ?>
+                                        }
+                                    }
+                                }
+            }
+    }
+</script>
+<?php endif; ?>

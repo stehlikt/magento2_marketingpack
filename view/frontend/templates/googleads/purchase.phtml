@@ -1,0 +1,36 @@
+<?php
+$g_id = $block->getGoogleAdsId();
+$g_conversion_label = $block->getGoogleAdsConversionLabel();
+$order_data = $this->getOrderData();
+$billingAddress = $block->getBillingAddress();
+?>
+
+<?php if ($g_id): ?>
+    <!-- Event snippet for Nákup conversion page -->
+
+    <script>
+        gtag('set', 'user_data', {
+            "email": "<?php echo $billingAddress->getEmail(); ?>",
+            "phone_number": "<?php echo $billingAddress->getTelephone(); ?>",
+            "address": {
+                "first_name": "<?php echo $billingAddress->getFirstname(); ?>",
+                "last_name": "<?php echo $billingAddress->getLastname(); ?>",
+                "street": "<?php echo implode(' ', $billingAddress->getStreet()); ?>",
+                "city": "<?php echo $billingAddress->getCity(); ?>",
+                "region": "<?php echo $billingAddress->getRegion(); ?>",
+                "postal_code": "<?php echo $billingAddress->getPostcode(); ?>",
+                "country": "<?php echo $billingAddress->getCountryId(); ?>"
+            }
+        });
+    </script>
+
+    <script>
+        gtag('event', 'conversion', {
+            'send_to': '<?php echo $g_id . '/' . $g_conversion_label; ?>',
+            'value': <?php echo $order_data['order_total'] ?>,
+            'currency': '<?php echo $order_data['currency'] ?>',
+            'transaction_id': '<?php echo $order_data['order_id'] ?>'
+        });
+    </script>
+<?php endif; ?>
+

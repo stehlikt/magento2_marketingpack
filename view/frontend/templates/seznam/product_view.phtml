@@ -1,0 +1,46 @@
+<?php
+$userData = $block->getUserData();
+$productDetail = $block->getProductDetail();
+$rtg_id = $block->getRetargetingId();
+
+$userDataArray = null;
+
+if ($userData) {
+    $billingAddress = $userData->getDefaultBillingAddress();
+    if ($billingAddress) {
+        $userDataArray = [
+            'email' => $userData->getEmail(),
+            'city' => $billingAddress->getCity(),
+            'street' => implode(' ', $billingAddress->getStreet()),
+            'region' => $billingAddress->getRegion(),
+            'postcode' => $billingAddress->getPostcode(),
+            'telephone' => $billingAddress->getTelephone()
+        ];
+    }
+}
+
+$data = [
+    'user' => $userDataArray,
+    'product' => [
+        'id' => $productDetail['product_id'],
+        'category_path' => $productDetail['category_path']
+    ]
+];
+?>
+<?php if($rtg_id): ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "productViewSeznam": {
+                        "component": "Railsformers_MarketingPack/js/seznam/product_view",
+                        "data": <?php echo json_encode($data); ?>,
+                        "rtgId": <?php echo json_encode($rtg_id); ?>
+    }
+}
+}
+}
+}
+</script>
+<?php endif; ?>

@@ -1,0 +1,38 @@
+<?php
+$order = $block->getLastOrder();
+$sklik_conversion_id = $block->getSklikConversionId();
+$zbozi_type = $block->getZboziType();
+$zbozi_place_id = $block->getZboziPlaceId();
+?>
+
+<?php if ($sklik_conversion_id && $order): ?>
+    <script type="text/javascript" src="https://c.seznam.cz/js/rc.js"></script>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "conversionTracking": {
+                            "component": "Railsformers_MarketingPack/js/seznam/success",
+                            "config": {
+                                "orderId": "<?php echo $order->getIncrementId(); ?>",
+                        "total": <?php echo $order->getGrandTotal(); ?>,
+                        "customerEmail": "<?php echo $order->getCustomerEmail(); ?>",
+                        "billingAddress": {
+                            "countryId": "<?php echo $order->getBillingAddress()->getCountryId(); ?>",
+                            "city": "<?php echo $order->getBillingAddress()->getCity(); ?>",
+                            "street": <?php echo json_encode($order->getBillingAddress()->getStreet()); ?>,
+                            "postcode": "<?php echo $order->getBillingAddress()->getPostcode(); ?>",
+                            "telephone": "<?php echo $order->getBillingAddress()->getTelephone(); ?>"
+                        },
+                        "sklikConversionId": "<?php echo $sklik_conversion_id; ?>",
+                        "zboziType": "<?php echo $zbozi_type; ?>",
+                        "zboziPlaceId": "<?php echo $zbozi_place_id; ?>"
+                    }
+                }
+            }
+        }
+    }
+}
+    </script>
+<?php endif; ?>

@@ -1,0 +1,19 @@
+<?php
+$orderData = $block->getOrderData();
+?>
+<?php if($block->getMetaId()): ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "purchaseMeta": {
+                        "component": "Railsformers_MarketingPack/js/meta/purchase",
+                        "orderData": <?php echo json_encode($orderData); ?>
+    }
+}
+}
+}
+}
+</script>
+<?php endif; ?>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!-- Cookie consent -->
+        <link src="Railsformers_MarketingPack::js/cookieconsent-denied.js" />
+        <link src="Railsformers_MarketingPack::js/cookieconsent.js" />
+        <css src="Railsformers_MarketingPack::css/cookieconsent.css"/>
+
+
+    </head>
+    <body>
+        <!-- Google Analytics -->
+        <referenceBlock name="head.additional">
+            <block class="Railsformers\MarketingPack\Block\GoogleAnalytics\Config" name="ganalytics" template="Railsformers_MarketingPack::googleanalytics/gtag.phtml"/>
+        </referenceBlock>
+
+        <!-- Google Ads -->
+        <referenceBlock name="head.additional">
+            <block class="Railsformers\MarketingPack\Block\GoogleAds\Config" name="gads" template="Railsformers_MarketingPack::googleads/gtag.phtml"/>
+        </referenceBlock>
+
+        <!-- Seznam -->
+        <referenceBlock name="head.additional">
+            <block class="Railsformers\MarketingPack\Block\Seznam\Config" name="seznam" template="Railsformers_MarketingPack::seznam/seznam.phtml" />
+        </referenceBlock>
+
+        <!-- Meta -->
+        <referenceBlock name="head.additional">
+            <block class="Railsformers\MarketingPack\Block\Meta\Config" name="meta" template="Railsformers_MarketingPack::meta/meta.phtml" />
+        </referenceBlock>
+
+
+        <!-- Microsoft -->
+        <referenceBlock name="head.additional">
+            <block class="Railsformers\MarketingPack\Block\Microsoft\Config" name="microsoft" template="Railsformers_MarketingPack::microsoft/microsoft.phtml" />
+        </referenceBlock>
+        
+    </body>
+</page>

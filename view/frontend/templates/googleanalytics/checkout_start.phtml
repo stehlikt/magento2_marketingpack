@@ -1,0 +1,23 @@
+<?php
+$productListData = $block->getProductListData();
+$g_id = $block->getGoogleAnalyticsId();
+?>
+
+<?php if($g_id): ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "checkoutStartGtag": {
+                        "component": "Railsformers_MarketingPack/js/googleanalytics/begin_checkout",
+                        "productListData": <?php echo json_encode($productListData); ?>,
+                        "coupon": "<?php echo $block->getCouponCode(); ?>",
+                        "gtagId": "<?php echo $g_id ?>"
+                            }
+                        }
+                    }
+            }
+    }
+</script>
+<?php endif; ?>

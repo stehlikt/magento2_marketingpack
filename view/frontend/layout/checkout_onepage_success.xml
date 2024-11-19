@@ -1,0 +1,28 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- Google Analytics -->
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\GoogleAnalytics\Purchase" name="purchase_google_analytics" template="Railsformers_MarketingPack::googleanalytics/purchase.phtml"/>
+        </referenceContainer>
+
+        <!-- Google Ads -->
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\GoogleAds\Purchase" name="purchase_google_ads" template="Railsformers_MarketingPack::googleads/purchase.phtml"/>
+        </referenceContainer>
+
+        <!-- Seznam -->
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\Seznam\Purchase" name="purchase_seznam" template="Railsformers_MarketingPack::seznam/purchase.phtml"/>
+        </referenceContainer>
+
+        <!-- Heureka -->
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\Heureka\Purchase" name="purchase_heureka" template="Railsformers_MarketingPack::heureka/purchase.phtml" />
+        </referenceContainer>
+
+        <!-- Meta -->
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\Meta\Purchase" name="purchase_meta" template="Railsformers_MarketingPack::meta/purchase.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,46 @@
+<?xml version = "1.0"?>
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp/etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="connect-src">
+            <values>
+                <value id="googlesyndication" type="host">https://pagead2.googlesyndication.com</value>
+                <value id="doubleclick" type="host">https://googleads.g.doubleclick.net</value>
+                <value id="region1" type="host">https://region1.google-analytics.com</value>
+                <value id="harvester" type="host">https://harvester.ocm.heureka.group/</value>
+            </values>
+        </policy>
+        <policy id="img-src">
+            <values>
+                <value id="facebook" type="host">https://www.facebook.com</value>
+                <value id="seznam" type="host">https://c.seznam.cz</value>
+                <value id="googlecz" type="host">https://www.google.cz</value>
+                <value id="zbozi_image" type="host">https://www.zbozi.cz</value>
+            </values>
+        </policy>
+        <policy id="style-src">
+            <values>
+                <value id="cdn_style" type="host">https://cdn.jsdelivr.net</value>
+            </values>
+        </policy>
+        <policy id="script-src">
+            <values>
+                <value id="zbozi_script" type="host">https://www.zbozi.cz</value>
+                <value id="heureka_harvester" type="host">https://harvester.ocm.heureka.group/</value>
+                <value id="cdn_heureka" type="host">https://cdn.heureka.group</value>
+                <value id="heureka" type="host">https://www.heureka.cz</value>
+                <value id="microsoft" type="host">https://www.clarity.ms</value>
+                <value id="connect_facebook" type="host">https://connect.facebook.net</value>
+                <value id="region1_google" type="host">https://region1.google-analytics.com</value>
+                <value id="googlecz" type="host">https://www.google.cz</value>
+                <value id="seznam" type="host">https://c.seznam.cz</value>
+                <value id="gtag" type="host">www.googletagmanager.com</value>
+                <value id="cdn_script" type="host">https://cdn.jsdelivr.net</value>
+                <value id="ga" type="host">www.google-analytics.com</value>
+                <value id="gads" type="host">www.googleadservices.com</value>
+                <value id="adobe" type="host">https://*.adobe.com</value>
+                <value id="assets-adobe" type="host">https://assets.adobedtm.com</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>

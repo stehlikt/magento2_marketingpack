@@ -1,0 +1,22 @@
+<?php
+$productListData = $block->getProductListData();
+$currency = $block->getCurrencyCode();
+?>
+<?php if($block->getMetaId()): ?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "checkoutStartMeta": {
+                        "component": "Railsformers_MarketingPack/js/meta/initiate_checkout",
+                        "productListData": <?php echo json_encode($productListData); ?>,
+                        "currency": "<?php echo $currency; ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>
+<?php endif; ?>

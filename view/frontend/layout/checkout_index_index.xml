@@ -1,0 +1,124 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+
+    </head>
+    <body>
+        <!-- Google analytics -->
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\GoogleAnalytics\CheckoutStart" name="checkout_start_analytics" template="Railsformers_MarketingPack::googleanalytics/checkout_start.phtml"/>
+        </referenceContainer>
+
+        <!-- Meta -->
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\Meta\CheckoutStart" name="checkout_start_meta" template="Railsformers_MarketingPack::meta/checkout_start.phtml"/>
+        </referenceContainer>
+
+
+        <!-- Heureka Overeno zakazniky -->
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="billing-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="payment" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <!-- to show checkbox inside payment section-->
+                                                        <item name="payments-list" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="before-place-order" xsi:type="array">
+                                                                    <item name="children" xsi:type="array">
+                                                                        <item name="custom-checkbox" xsi:type="array">
+                                                                            <!--item name="component" xsi:type="string">Railsformers_MarketingPack/js/checkout/overeno</item-->
+                                                                            <!--item name="component" xsi:type="string">Railsformers_MarketingPack/js/view/checkout-form-js</item-->
+                                                                            <item name="component" xsi:type="string">Railsformers_MarketingPack/js/heureka/overeno</item>
+                                                                            <item name="displayArea" xsi:type="string">before-place-order</item>
+                                                                            <item name="sortOrder" xsi:type="string">3</item>
+                                                                            <item name="dataScope" xsi:type="string">checkoutcomments</item>
+                                                                            <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+
+                                                        <!-- to show checkbox below the payment methods -->
+                                                        <!-- <item name="afterMethods" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="custom-checkbox" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">vendor_module/js/checkout/overeno</item>
+                                                                    <item name="displayArea" xsi:type="string">before-place-order</item>
+                                                                    <item name="sortOrder" xsi:type="string">3</item>
+                                                                    <item name="dataScope" xsi:type="string">checkoutcomments</item>
+                                                                    <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                </item>
+                                                            </item>
+                                                        </item> -->
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\Heureka\Checkout" name="checkout_heureka" template="Railsformers_MarketingPack::heureka/checkout.phtml"/>
+        </referenceContainer>
+
+        <!-- Zbozi checkbox -->
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="billing-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="payment" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <!-- to show checkbox inside payment section-->
+                                                        <item name="payments-list" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="before-place-order" xsi:type="array">
+                                                                    <item name="children" xsi:type="array">
+                                                                        <item name="custom-checkbox-zbozi" xsi:type="array">
+                                                                            <item name="component" xsi:type="string">Railsformers_MarketingPack/js/seznam/customCheckbox</item>
+                                                                            <item name="displayArea" xsi:type="string">before-place-order</item>
+                                                                            <item name="sortOrder" xsi:type="string">3</item>
+                                                                            <item name="dataScope" xsi:type="string">checkoutcomments</item>
+                                                                            <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceContainer name="content">
+            <block class="Railsformers\MarketingPack\Block\Seznam\Checkout" name="checkout_seznam" template="Railsformers_MarketingPack::seznam/checkout.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

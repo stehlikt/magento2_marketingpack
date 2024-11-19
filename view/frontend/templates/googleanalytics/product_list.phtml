@@ -1,0 +1,20 @@
+<?php
+$productListData = $block->getProductListData();
+?>
+<?php if($block->getGoogleAnalyticsId()): ?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "productListGtag": {
+                        "component": "Railsformers_MarketingPack/js/googleanalytics/product_list",
+                        "productListData": <?php echo json_encode($productListData); ?>
+                    }
+                }
+            }
+        }
+    }
+</script>
+<?php endif; ?>

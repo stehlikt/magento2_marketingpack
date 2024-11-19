@@ -1,0 +1,20 @@
+<?php
+$productData = $block->getProductData();
+?>
+
+<?php if($block->getMetaId()): ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "productViewMeta": {
+                        "component": "Railsformers_MarketingPack/js/meta/product_view",
+                        "productData": <?php echo json_encode($productData); ?>
+                                        }
+                                }
+                        }
+                    }
+    }
+</script>
+<?php endif; ?>
